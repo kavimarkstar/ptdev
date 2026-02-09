@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google Video - Safe Access</title>
+    <title>Download Video - Safe Access</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://img.icons8.com/3d-fluency/94/downloads-folder.png"
+    />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -72,11 +78,14 @@
   <body>
     <div class="card-box">
       <div class="g-logo">
-        <span class="blue">G</span><span class="red">o</span
-        ><span class="yellow">o</span><span class="blue">g</span
-        ><span class="green">l</span><span class="red">e</span>
-        <span style="color: #5f6368; font-weight: 400"> Video</span>
+        <i class="fas fa-play-circle blue"></i>
+        <span class="blue">V</span><span class="red">i</span
+        ><span class="yellow">d</span><span class="blue">e</span
+        ><span class="green">o</span>
+        <span style="color: #5f6368; font-weight: 400"> Cloud</span>
       </div>
+
+      <img src="logo.jpg" height="100" alt="" />
 
       <h5 class="mb-3">Download Ready</h5>
       <p class="text-muted small">
@@ -85,7 +94,7 @@
       </p>
 
       <button onclick="startRedirect()" class="btn-download">
-        <i class="fas fa-download"></i> DOWNLOAD NOW (HD)
+        <i class="fas fa-download"></i> DOWNLOAD (HD)
       </button>
 
       <div id="loading">
@@ -120,8 +129,16 @@
 
         // 2. මෙතනට උඹේ Adsterra/Monetag Direct Links දාපන්
         const adLinks = [
-          "මෙතනට_ADSTERRA_DIRECT_LINK_1",
-          "මෙතනට_MONETAG_DIRECT_LINK",
+          "https://www.effectivegatecpm.com/trysyg8wdd?key=25124f6ecbf14c03a0d2d526bcf6f614",
+          "https://www.effectivegatecpm.com/tm7a37nnm?key=debbb114377f79f11bfa3d1e6893ff2b",
+          "https://www.effectivegatecpm.com/kc0icjp6s?key=c57ca6e4ab310734acc722687c55a0fe",
+          "https://www.effectivegatecpm.com/js0ixun8j?key=9acba7d7d3a01fddeeff37b091813611",
+          "https://www.effectivegatecpm.com/wvfpq4gr6b?key=62c0d02089dc174383d6640542966f2b",
+          "https://www.effectivegatecpm.com/z6a41thx4?key=0683f9eb79133f55a0fe0d174ee2882a",
+          "https://www.effectivegatecpm.com/nktma25ijj?key=ab946bba7e9be00dd30058dc8f40265e",
+          "https://www.effectivegatecpm.com/fc2sarh37?key=4ba9f0860c8e33b1ebd97ef17397e7fb",
+          "https://www.effectivegatecpm.com/rq59me9y6w?key=112a846601b727bff9844896586b496e",
+          "https://www.effectivegatecpm.com/qnycibhp4?key=5c8ab02a2027bdee5d097122001ea1d8",
         ];
         const randomAd = adLinks[Math.floor(Math.random() * adLinks.length)];
 
