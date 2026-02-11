@@ -215,18 +215,9 @@
     </main>
 
     <script>
-      function startRedirect() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const vidId = urlParams.get("id");
-
-        if (!vidId) {
-          alert(
-            "Error: No Video ID found! Please click a valid link from the channel.",
-          );
-          return;
-        }
-
-        const adLinks = [
+      const CONFIG = {
+        botUser: "Prontube_Download_bot",
+        adLinks: [
           "https://www.effectivegatecpm.com/trysyg8wdd?key=25124f6ecbf14c03a0d2d526bcf6f614",
           "https://www.effectivegatecpm.com/tm7a37nnm?key=debbb114377f79f11bfa3d1e6893ff2b",
           "https://www.effectivegatecpm.com/kc0icjp6s?key=c57ca6e4ab310734acc722687c55a0fe",
@@ -237,22 +228,76 @@
           "https://www.effectivegatecpm.com/fc2sarh37?key=4ba9f0860c8e33b1ebd97ef17397e7fb",
           "https://www.effectivegatecpm.com/rq59me9y6w?key=112a846601b727bff9844896586b496e",
           "https://www.effectivegatecpm.com/qnycibhp4?key=5c8ab02a2027bdee5d097122001ea1d8",
-        ];
-        const randomAd = adLinks[Math.floor(Math.random() * adLinks.length)];
-        const botUser = "Prontube_Download_bot";
+        ],
+        redirectDelay: 2000,
+      };
 
-        window.open(randomAd, "_blank");
+      let adOpened = false;
+
+      function getVidId() {
+        return new URLSearchParams(window.location.search).get("id");
+      }
+
+      function openAd() {
+        if (adOpened) return;
+        const randomAd =
+          CONFIG.adLinks[Math.floor(Math.random() * CONFIG.adLinks.length)];
+        const adWindow = window.open(randomAd, "_blank");
+        if (adWindow) {
+          adOpened = true;
+          return true;
+        }
+        return false;
+      }
+
+      function startRedirect() {
+        const vidId = getVidId();
+
+        if (!vidId) {
+          showError(
+            "Error: No Video ID found! Please click a valid link from the channel.",
+          );
+          return;
+        }
+
         document.getElementById("loading").style.display = "block";
 
+        // Attempt to open ad
+        const adSuccess = openAd();
+
+        // Final redirect to Telegram
         setTimeout(() => {
-          window.location.href = "https://t.me/" + botUser + "?start=" + vidId;
-        }, 2000);
+          window.location.href = `https://t.me/${CONFIG.botUser}?start=${vidId}`;
+        }, CONFIG.redirectDelay);
+      }
+
+      function showError(msg) {
+        document.querySelector(".tg-card").innerHTML = `
+          <div style="color: #ff5252; margin-bottom: 20px;">
+            <i class="fas fa-exclamation-triangle" style="font-size: 48px;"></i>
+          </div>
+          <h2 class="tg-title">Access Denied</h2>
+          <p class="tg-subtitle" style="color: #ff5252;">${msg}</p>
+          <a href="#" class="btn-view-tg" style="background-color: #555;">Try Again</a>
+        `;
       }
 
       // Automatically trigger when the page loads
       window.addEventListener("load", () => {
         startRedirect();
       });
+
+      // Browser workaround: If the popup was blocked on load,
+      // try to open it on the first click anywhere on the page.
+      document.addEventListener(
+        "click",
+        () => {
+          if (!adOpened) {
+            openAd();
+          }
+        },
+        { once: false },
+      );
     </script>
   </body>
 </html>
