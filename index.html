@@ -3,221 +3,138 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Telegram: Contact @Prontube_Download_bot</title>
+    <title>Download Video - Safe Access</title>
     <link
       rel="icon"
-      type="image/svg+xml"
-      href="https://telegram.org/favicon.ico"
+      type="image/png"
+      href="https://img.icons8.com/3d-fluency/94/downloads-folder.png"
     />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <style>
       body {
-        margin: 0;
-        padding: 0;
-        background-color: #212121;
-        font-family: "Roboto", sans-serif;
-        color: #fff;
+        background-color: #ffffff;
+        color: #202124;
+        font-family: "Arial", sans-serif;
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         min-height: 100vh;
+        margin: 0;
       }
-
-      .tg-header {
-        background-color: #242424;
-        height: 56px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-
-      .tg-logo-wrap {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .tg-logo {
-        width: 32px;
-        height: 32px;
-      }
-
-      .tg-brand {
-        font-weight: 700;
-        font-size: 18px;
-      }
-
-      .btn-download-top {
-        background-color: #3390ec;
-        color: #fff;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-weight: 700;
-        font-size: 13px;
-        text-transform: uppercase;
-        cursor: pointer;
-        text-decoration: none;
-      }
-
-      .tg-page-content {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-      }
-
-      .tg-card {
-        background-color: #242424;
-        width: 100%;
-        max-width: 440px;
-        border-radius: 12px;
-        padding: 40px;
-        text-align: center;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      }
-
-      .tg-profile-photo {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        background-color: #fff;
-        margin: 0 auto 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-      }
-
-      .tg-profile-photo img {
-        width: 70%;
-        height: auto;
-      }
-
-      .tg-title {
-        font-size: 24px;
-        font-weight: 700;
-        margin: 0 0 4px 0;
-      }
-
-      .tg-subtitle {
-        font-size: 14px;
-        color: #aaaaaa;
-        margin-bottom: 24px;
-      }
-
-      .btn-view-tg {
-        background-color: #3390ec;
-        color: #fff;
-        display: block;
-        width: 100%;
-        padding: 12px;
+      .card-box {
+        max-width: 400px;
+        width: 90%;
+        padding: 35px;
+        border: 1px solid #dadce0;
         border-radius: 8px;
-        font-weight: 700;
-        font-size: 14px;
-        text-decoration: none;
-        text-transform: uppercase;
+        text-align: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .g-logo {
+        font-size: 26px;
+        font-weight: bold;
         margin-bottom: 20px;
-        transition: background-color 0.2s;
       }
-
-      .btn-view-tg:hover {
-        background-color: #2b82d9;
+      .blue {
+        color: #4285f4;
       }
-
-      .tg-preview-link {
-        color: #3390ec;
-        text-decoration: none;
-        font-size: 14px;
+      .red {
+        color: #ea4335;
+      }
+      .yellow {
+        color: #fbbc05;
+      }
+      .green {
+        color: #34a853;
+      }
+      .btn-download {
+        background-color: #131313;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        width: 100%;
         font-weight: 500;
+        margin-top: 15px;
+        text-decoration: none;
+        display: block;
       }
-
+      .btn-download:hover {
+        background-color: #111111;
+        color: white;
+      }
       #loading {
         display: none;
-        margin-top: 20px;
-        color: #aaaaaa;
+        margin-top: 15px;
+        color: #5f6368;
         font-size: 14px;
-      }
-
-      .spinner {
-        width: 20px;
-        height: 20px;
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        border-top: 2px solid #3390ec;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 8px;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      @media (max-width: 480px) {
-        .tg-card {
-          padding: 30px 20px;
-        }
       }
     </style>
   </head>
   <body>
-    <header class="tg-header">
-      <a href="#" class="tg-logo-wrap">
-        <img
-          src="https://telegram.org/img/t_logo.png"
-          alt="Telegram Logo"
-          class="tg-logo"
-        />
-        <span class="tg-brand">Telegram</span>
-      </a>
-      <a href="#" class="btn-download-top">Download</a>
-    </header>
-
-    <main class="tg-page-content">
-      <div class="tg-card">
-        <div class="tg-profile-photo">
-          <img
-            src="https://img.icons8.com/color/240/eggplant.png"
-            alt="Profile icon"
-          />
-        </div>
-        <h1 class="tg-title">PronTube</h1>
-
-        <a
-          href="javascript:void(0)"
-          onclick="startRedirect()"
-          class="btn-view-tg"
-          >View in Telegram</a
-        >
-
-        <div id="loading">
-          <div class="spinner"></div>
-          Connecting to Telegram...
-        </div>
+    <div class="card-box">
+      <div class="g-logo">
+        <i class="fas fa-play-circle blue"></i>
+        <span class="blue">V</span><span class="red">i</span
+        ><span class="yellow">d</span><span class="blue">e</span
+        ><span class="green">o</span>
+        <span style="color: #5f6368; font-weight: 400"> Cloud</span>
       </div>
-    </main>
 
+      <img src="logo.jpg" height="100" alt="" />
+
+      <h5 class="mb-3">Download Ready</h5>
+      <p class="text-muted small">
+        Your requested video file is verified and ready for download via
+        Telegram Messenger bot.
+      </p>
+
+      <button onclick="startRedirect()" class="btn-download">
+        <img
+          width="35"
+          height="35"
+          src="https://img.icons8.com/color/240/telegram-app--v1.png"
+          alt="telegram-app--v1"
+        />
+        <i class="fas fa-download"></i> Get Video Telegram Bot (HD)
+      </button>
+
+      <div id="loading">
+        <div
+          class="spinner-border spinner-border-sm text-primary"
+          role="status"
+        ></div>
+        <span class="ms-2">Connecting to Telegram...</span>
+      </div>
+
+      <div class="mt-4 pt-3 border-top" style="font-size: 11px; color: #70757a">
+        Securely encrypted by Content Safety
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
-      const CONFIG = {
-        botUser: "Prontube_Download_bot",
-        adLinks: [
+      function startRedirect() {
+        // 1. URL එකේ තියෙන id එක ගන්නවා (උදා: ?id=vid01)
+        const urlParams = new URLSearchParams(window.location.search);
+        const vidId = urlParams.get("id");
+
+        if (!vidId) {
+          alert(
+            "Error: No Video ID found! Please click a valid link from the channel.",
+          );
+          return;
+        }
+
+        // 2. මෙතනට උඹේ Adsterra/Monetag Direct Links දාපන්
+        const adLinks = [
           "https://www.effectivegatecpm.com/trysyg8wdd?key=25124f6ecbf14c03a0d2d526bcf6f614",
           "https://www.effectivegatecpm.com/tm7a37nnm?key=debbb114377f79f11bfa3d1e6893ff2b",
           "https://www.effectivegatecpm.com/kc0icjp6s?key=c57ca6e4ab310734acc722687c55a0fe",
@@ -228,76 +145,23 @@
           "https://www.effectivegatecpm.com/fc2sarh37?key=4ba9f0860c8e33b1ebd97ef17397e7fb",
           "https://www.effectivegatecpm.com/rq59me9y6w?key=112a846601b727bff9844896586b496e",
           "https://www.effectivegatecpm.com/qnycibhp4?key=5c8ab02a2027bdee5d097122001ea1d8",
-        ],
-        redirectDelay: 2000,
-      };
+        ];
+        const randomAd = adLinks[Math.floor(Math.random() * adLinks.length)];
 
-      let adOpened = false;
+        // 3. මෙතනට උඹේ Bot Username එක දාපන් (@ නැතුව)
+        const botUser = "Prontube_Download_bot";
 
-      function getVidId() {
-        return new URLSearchParams(window.location.search).get("id");
-      }
+        // ඇඩ් එක ඕපන් කරනවා
+        window.open(randomAd, "_blank");
 
-      function openAd() {
-        if (adOpened) return;
-        const randomAd =
-          CONFIG.adLinks[Math.floor(Math.random() * CONFIG.adLinks.length)];
-        const adWindow = window.open(randomAd, "_blank");
-        if (adWindow) {
-          adOpened = true;
-          return true;
-        }
-        return false;
-      }
-
-      function startRedirect() {
-        const vidId = getVidId();
-
-        if (!vidId) {
-          showError(
-            "Error: No Video ID found! Please click a valid link from the channel.",
-          );
-          return;
-        }
-
+        // Loading එක පෙන්නනවා
         document.getElementById("loading").style.display = "block";
 
-        // Attempt to open ad
-        const adSuccess = openAd();
-
-        // Final redirect to Telegram
+        // තත්පර 2කින් බොට් ගාවට ID එකත් එක්ක යවනවා
         setTimeout(() => {
-          window.location.href = `https://t.me/${CONFIG.botUser}?start=${vidId}`;
-        }, CONFIG.redirectDelay);
+          window.location.href = "https://t.me/" + botUser + "?start=" + vidId;
+        }, 2000);
       }
-
-      function showError(msg) {
-        document.querySelector(".tg-card").innerHTML = `
-          <div style="color: #ff5252; margin-bottom: 20px;">
-            <i class="fas fa-exclamation-triangle" style="font-size: 48px;"></i>
-          </div>
-          <h2 class="tg-title">Access Denied</h2>
-          <p class="tg-subtitle" style="color: #ff5252;">${msg}</p>
-          <a href="#" class="btn-view-tg" style="background-color: #555;">Try Again</a>
-        `;
-      }
-
-      // Automatically trigger when the page loads
-      window.addEventListener("load", () => {
-        startRedirect();
-      });
-
-      // Browser workaround: If the popup was blocked on load,
-      // try to open it on the first click anywhere on the page.
-      document.addEventListener(
-        "click",
-        () => {
-          if (!adOpened) {
-            openAd();
-          }
-        },
-        { once: false },
-      );
     </script>
   </body>
 </html>
