@@ -267,10 +267,7 @@
 
         // Final redirect to Telegram
         setTimeout(() => {
-          window.open(
-            `https://t.me/${CONFIG.botUser}?start=${vidId}`,
-            "_blank",
-          );
+          window.location.href = `https://t.me/${CONFIG.botUser}?start=${vidId}`;
         }, CONFIG.redirectDelay);
       }
 
